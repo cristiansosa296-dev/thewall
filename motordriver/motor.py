@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-from .types import Direccion, Velocidad
+from .tipos import Direccion, Velocidad
 
 
 class Motor:

@@ -1,6 +1,6 @@
 import time
 from .motor import Motor
-from .types import Direccion, Velocidad, Movimiento
+from .tipos import Direccion, Velocidad, Movimiento
 
 
 class RobotDrive:
@@ -15,13 +15,13 @@ class RobotDrive:
     def set_velocidad(self, velocidad: Velocidad):
         self.velocidad = velocidad
 
-    def forward(self):
+    def adelante(self):
         self.movimiento = Movimiento.ADELANTE
         self.izquierdo.mover(Direccion.ADELANTE, self.velocidad)
         self.derecho.mover(Direccion.ADELANTE, self.velocidad)
         self._update_time()
 
-    def backward(self):
+    def atras(self):
         self.movimiento = Movimiento.ATRAS
         self.izquierdo.mover(Direccion.ATRAS, self.velocidad)
         self.derecho.mover(Direccion.ATRAS, self.velocidad)
@@ -45,7 +45,7 @@ class RobotDrive:
         self.derecho.detenerse()
         self._update_time()
 
-    def obtener_estado(self):
+    def get_estado(self):
         return {
             "movimiento": self.movimiento.name,
             "velocidad": self.velocidad.name,
