@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>THE WALL PROJECT</title>
+
+    <style>
+        body {
+            background-color: #e9cd91;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 80px;
+        }
+
+        h2, h3 {
+            text-align: center;
+            font-size: 35px;
+        }
+
+        .fila {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .botones {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        button {
+            border-radius: 100px;
+            margin: 9px;
+            padding: 20px;
+            width: 80px;
+            background: linear-gradient(145deg,#ffffff,#d9d9d9);
+            border: none;
+            box-shadow:
+                5px 5px 10px rgba(0, 0, 0, 0.5),
+                -3px -3px 8px rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        button:active {
+            transform: translateY(2px);
+            box-shadow: inset 3px 3px 6px rgba(0,0,0,0.4);
+        }
+
+        input {
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            padding: 8px;
+        }
+
+        input:focus {
+            outline: none;
+            border: 1px solid black;
+        }
+
+        .texto {
+            text-align: center;
+        }
+
+        /* SWITCH */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            background: linear-gradient(145deg, #cccccc, #eeeeee);
+            border-radius: 30px;
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .slider:before {
+            content: "";
+            position: absolute;
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+
+            background: linear-gradient(145deg, #ffffff, #d9d9d9);
+            border-radius: 50%;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .switch input:checked + .slider {
+            background: linear-gradient(145deg, #4CAF50, #2e7d32);
+        }
+
+        .switch input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .flecha {
+            text-align: center;
+            font-size: 80px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>THE WALL PROJECT</h1>
+
+    <h2>Movimiento</h2>
+
+    <div class="botones">
+        <br>
+        <button id="btn-w">W</button>
+        <br>
+        <button id="btn-a">A</button>
+        <button id="btn-s">S</button>
+        <button id="btn-d">D</button>
+    </div>
+
+    <div class="fila">
+
+        <!-- VELOCIDAD -->
+        <div>
+            <h3>Velocidades</h3>  
+
+            <label class="switch">
+                <input type="radio" name="velocidad" value="baja" checked>
+                <span class="slider"></span>
+            </label>
+            <br>bajo<br><br>
+
+            <label class="switch">
+                <input type="radio" name="velocidad" value="alta">
+                <span class="slider"></span>
+            </label>
+            <br>alto
+        </div>
+
+        <!-- FLECHA -->
+        <!-- <div class="flecha" id="flecha">⬆</div> -->
+
+        <!-- GIRO
+        <div>
+            <h3>Sentido de giro</h3>
+
+            <label class="switch">
+                <input type="radio" name="giro" value="adelante" checked>
+                <span class="slider"></span>
+            </label>
+            <br>adelante<br><br>
+
+            <label class="switch">
+                <input type="radio" name="giro" value="atras">
+                <span class="slider"></span>
+            </label>
+            <br>atras
+        </div> -->
+
+    </div>
+
+    <!-- <div class="texto">
+        <h4>Escribir IP v4 de Raspberry</h4>
+        <input id="ip" type="text" placeholder="              Escribir IP">
+        <button onclick="conectar()">Conectar</button>
+        <p id="estado"></p>
+    </div> -->
+
+<script src="static/js/control.js"></script>
+
+</body>
+</html>
